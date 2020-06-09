@@ -6,7 +6,7 @@
 
 .TodoItem-enter {
 	opacity: 0;
-	transform: scale(0.9);
+	transform: translateX(-30px);
 }
 
 .TodoItem-enter-active {
@@ -21,6 +21,6 @@
 
 .TodoItem-exit-active {
 	opacity: 0;
-	transform: scale(0.9);
+	transform: translateX(-30px);
 	transition: opacity 300ms, transform 300ms;
 }
