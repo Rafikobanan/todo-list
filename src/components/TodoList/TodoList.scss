@@ -1,0 +1,26 @@
+.TodoList {
+	background: #ffffff;
+	padding: 25px;
+	border: 1px solid #dddddd;
+}
+
+.TodoItem-enter {
+	opacity: 0;
+	transform: scale(0.9);
+}
+
+.TodoItem-enter-active {
+	opacity: 1;
+	transform: translateX(0);
+	transition: opacity 300ms, transform 300ms;
+}
+
+.TodoItem-exit {
+	opacity: 1;
+}
+
+.TodoItem-exit-active {
+	opacity: 0;
+	transform: scale(0.9);
+	transition: opacity 300ms, transform 300ms;
+}
