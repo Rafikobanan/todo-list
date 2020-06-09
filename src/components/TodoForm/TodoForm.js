@@ -14,9 +14,15 @@ function TodoForm() {
 		setText('');
 	};
 
+	const keyDownHandler = (e) => {
+		if (e.keyCode !== 13) return;
+
+		clickHandler();
+	};
+
 	return (
 		<div className="TodoForm">
-			<input type="text" onChange={(e) => setText(e.target.value)} value={text} className="TodoForm__input" placeholder="What do you want to add?"/>
+			<input onKeyDown={keyDownHandler} type="text" onChange={(e) => setText(e.target.value)} value={text} className="TodoForm__input" placeholder="What do you want to add?"/>
 			<IconButton onClick={clickHandler} className="TodoForm__button" icon="add"/>
 		</div>
 	);
