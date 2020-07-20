@@ -3,7 +3,7 @@ import BigTitle from '../../components/UI/BigTitle/BigTitle';
 import TodoForm from '../../components/TodoForm/TodoForm';
 import TodoList from '../../components/TodoList/TodoList';
 import {TodoContext} from '../../context/todoContext';
-import storage from '../../components/storage/storage';
+import storage from '../../storage/storage';
 
 function Todo() {
 	const [tasks, setTasks] = useState(storage());
@@ -29,15 +29,23 @@ function Todo() {
 
 			return task;
 		}));
-	}
+	};
+
+	const changeText = (id, text) => {
+		setTasks(tasks.map((task) => {
+			if (task.id === id) task.text = text;
+
+			return task;
+		}))
+	};
 
 	return (
 		<TodoContext.Provider value={{
-			addTask, removeTask, toggleTask
+			addTask, removeTask, toggleTask, changeText
 		}}>
 			<div className="Todo">
 				<div className="container">
-					<BigTitle title="Todo list"/>
+					<BigTitle title="Todo лист"/>
 					<TodoForm />
 					<TodoList tasks={tasks}/>
 				</div>
