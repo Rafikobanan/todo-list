@@ -12,6 +12,7 @@
 	&__container {
 		display: flex;
 		align-items: center;
+		width: 100%;
 	}
 	&__checkbox {
 		margin-right: 10px;
@@ -22,6 +23,8 @@
 	}
 	&__text {
 		display: inline-block;
+		width: 100%;
+		transform: translateY(2px);
 	}
 	&__button {
 		min-width: 15px;

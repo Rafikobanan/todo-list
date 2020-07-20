@@ -22,7 +22,14 @@ function TodoForm() {
 
 	return (
 		<div className="TodoForm">
-			<input onKeyDown={keyDownHandler} type="text" onChange={(e) => setText(e.target.value)} value={text} className="TodoForm__input" placeholder="What do you want to add?"/>
+			<input
+				onKeyDown={keyDownHandler}
+				type="text"
+				onChange={(e) => setText(e.target.value)}
+				value={text}
+				className="TodoForm__input"
+				placeholder="Что вы хотите добавить?"
+			/>
 			<IconButton onClick={clickHandler} className="TodoForm__button" icon="add"/>
 		</div>
 	);

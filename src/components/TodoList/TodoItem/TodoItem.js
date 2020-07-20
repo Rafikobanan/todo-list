@@ -4,7 +4,7 @@ import IconButton from '../../UI/IconButton/IconButton';
 import { TodoContext } from '../../../context/todoContext';
 
 function TodoItem({task}) {
-	const {toggleTask, removeTask} = useContext(TodoContext);
+	const {toggleTask, removeTask, changeText} = useContext(TodoContext);
 
 	const cls = [
 		'TodoItem',
@@ -17,8 +17,17 @@ function TodoItem({task}) {
 	return (
 		<li className={cls.join(' ')}>
 			<div className="TodoItem__container">
-				<input type="checkbox" checked={task.isCompleted} onChange={() => toggleTask(task.id)} className="TodoItem__checkbox"/>
-				<div className="TodoItem__text">{task.text}</div>
+				<input
+					type="checkbox"
+					checked={task.isCompleted}
+					onChange={() => toggleTask(task.id)}
+					className="TodoItem__checkbox"
+				/>
+				<input
+					className="TodoItem__text"
+					value={task.text}
+					onChange={(e) => changeText(task.id, e.target.value)}
+				/>
 			</div>
 			<IconButton onClick={() => removeTask(task.id)} className="TodoItem__button" icon="bin"/>
 		</li>
